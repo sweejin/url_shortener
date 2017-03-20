@@ -5,7 +5,8 @@ class UrlsController < ApplicationController
   end
 
   def create
-    @url = Url.new(params[:id])
+    # @url = Url.new(params[:id])
+    @url = Url.new(url_params)
     @url.shorten
     if @url.save
       redirect_to @url
