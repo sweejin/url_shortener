@@ -1,0 +1,14 @@
+<!-- We will now create a form so that a user can key in a URL. In app/views/urls, create a file named _form.html.erb, take note of the underscore! The underscore here represents that the view file we are creating is a partial view file and can be reused instead of typing out the form again and again (imagine having to create the same form for new and edit!). -->
+
+<%= form_for @url do |f| %>
+  <p>
+    <%= f.label "Type your URL here:" %><br>
+    <%= f.text_field :long_url %>
+  </p>
+
+  <p>
+    <%= f.submit "Shorten URL!" %>
+  </p>
+    <% end %>
+
+<!-- Here we are using the form helper form_for so that we can bind this form to our Url model. It is also best practice to use form_for if your form takes in values that are attributes of an Active Record object. -->
