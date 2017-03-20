@@ -29,7 +29,7 @@ class UrlsController < ApplicationController
     redirect_to @url.long_url
   end
 
-pirate
+private
   def url_params
     params.require(:url).permit(:long_url)
   end
