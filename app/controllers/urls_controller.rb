@@ -5,7 +5,13 @@ class UrlsController < ApplicationController
   end
 
   def create
-    @url = Url.create 
+    @url = Url.new(params[:id])
+    @url.shorten
+    if @url.save
+      redirect_to @url
+    else
+      render 'new'
+    end
   end
 
   def index
