@@ -24,6 +24,12 @@ class UrlsController < ApplicationController
     @url = Url.find(params[:id])
   end
 
+  def destroy
+    @url = Url.find(params[:id])
+    @url.destroy
+    redirect_to urls_path
+  end
+
   def sweejin
     @url = Url.find_by(short_url: params[:short_url])
     redirect_to @url.long_url
